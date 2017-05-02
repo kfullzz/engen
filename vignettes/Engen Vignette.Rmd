@@ -62,8 +62,8 @@ The mo_engen_gr() function takes 6 parameters:
 
 |  Parameter | Information                                                                                                    |
 |-----------:|:---------------------------------------------------------------------------------------------------------------|
-|      df    |  The data frame to be used in this function, ideally having already passed through mo_engen                    |
-|     col    |  The column containing the name of the plant the data corresponds to                                           |
+|   df       |  The data frame to be used in this function, ideally having already passed through mo_engen                    |
+|   col      |  The column containing the name of the plant the data corresponds to                                           |
 |   plant    |  The character string of the name of the plant you want to generate graphs for                                 |
 |   para     |  The numeric column containing the parameter you wish to graph on the y axis (ie net generation)               |
 |   month    |  The numeric column indicating the month the data corresponds to. Must be in numeric format (ie 1 and not Jan) |
@@ -71,7 +71,7 @@ The mo_engen_gr() function takes 6 parameters:
 
 ####Usage
 ```
-mon_gen_mo_gr <- mo_engen_gr(mon_gen_mo, "Plant.Name", "Alvoca", "Month", "Year")
+mon_gen_mo_gr <- mo_engen_gr(mon_gen_mo, "Plant.Name", "Alcova", "Percent.Generation", "Month", "Year")
 ```
 
 ###yr_engen
@@ -87,8 +87,9 @@ The yr_engen() function takes 5 parameters:
 |    df      |  The data frame to be used in this function, ideally having already passed through mo_engen        |
 |    col     |  The column containing the name of the plant the data corresponds to                               |
 |    plant   |  The character string of the name of the plant you want to summarize                               |
-|    year    |  The numeric column containing the year corresponding to the data in order properly group the data |
 |    para    |  The numeric column containing the parameter you wish to calculate the yearly mean of              |
+|    month   |  THe numeric column containing the month corresponding to each data point                          |
+|    year    |  The numeric column containing the year corresponding to the data in order properly group the data |
 
 ####Usage
 ```
@@ -105,11 +106,11 @@ The yr_engen_gr() function takes 3 parameters:
 
 |  Parameter | Information                                                                                        |
 |-----------:|:---------------------------------------------------------------------------------------------------|
-|     df     |  The data frame to be used in this function, ideally having already passed through mo_engen        |
+|     df     |  The data frame to be used in this function, ideally having already passed through yr_engen        |
 |    year    |  The numeric column containing the year corresponding to the data in order properly group the data |
 |    para    |  The numeric column containing the parameter you wish to calculate the yearly mean of              |
 
 ####Usage
 ```
-mon_gen_yr_gr <- yr_engen_gr(mon_gen_mo_al, "Year", "Percent.Generation")
+mon_gen_yr_gr <- yr_engen_gr(mon_gen_yr, "Year", "Percent.Generation")
 ```

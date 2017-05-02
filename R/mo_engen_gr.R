@@ -10,17 +10,17 @@
 #' @keywords energy
 #' @return Function with return a series of graphs displaying parameter trends overtime by year
 #' @examples
-#' mo_engen_gr(mon_gen_mo, "Plant.Name", "Alvoca", "Month", "Year")
+#' mo_engen_gr(mon_gen_mo, "Plant.Name", "Alvoca", "Percent.Generation", "Month", "Year")
 #' @export
 
 
 
 mo_engen_gr <- function(df, col, plant, para, month, year) {
   df_gr <- df[df[ , col] == plant, ]
-  ggplot(df_gr, aes(df_gr[ , para], df_gr[ , month])) +
+  ggplot(df_gr, aes(df_gr[ , month], df_gr[ , para])) +
     geom_point() +
-    xlab(para) +
-    ylab(month) +
+    xlab(month) +
+    ylab(para) +
     scale_x_continuous(breaks=seq(1,12,1)) + 
     facet_wrap(~ df_gr[ , year])
 }
