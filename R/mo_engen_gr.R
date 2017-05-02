@@ -10,7 +10,7 @@
 #' @keywords energy
 #' @return Function with return a series of graphs displaying parameter trends overtime by year
 #' @examples
-#' mo_engen_gr(mon_gen_mo, "Plant.Name", "Alvoca", "Percent.Generation", "Month", "Year")
+#' mo_engen_gr(mon_gen_mo, "Plant.Name", "Alcova", "Percent.Generation", "Month", "Year")
 #' @export
 
 
